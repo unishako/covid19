@@ -1,17 +1,11 @@
 package com.example.covid19.model.dto;
 
 import lombok.Data;
-import org.seasar.doma.Entity;
-import org.seasar.doma.Metamodel;
 
 import java.time.LocalDate;
 
-/**
- * covid19
- */
-@Entity(metamodel = @Metamodel)
 @Data
-public class Covid19 {
+public class Covid19Dto {
     /**
      * 日付
      */
