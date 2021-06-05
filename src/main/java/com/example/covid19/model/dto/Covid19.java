@@ -6,9 +6,6 @@ import org.seasar.doma.Metamodel;
 
 import java.time.LocalDate;
 
-/**
- * covid19
- */
 @Entity(metamodel = @Metamodel)
 @Data
 public class Covid19 {

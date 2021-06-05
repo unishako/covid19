@@ -6,6 +6,44 @@
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.0.1/css/bootstrap.min.css}"/>
 </head>
 <body>
+<form method="post" th:action="@{/list}" th:object="${listForm}">
+    <fieldset>
+        <legend>検索条件</legend>
+        <label for="prefecturesCode" class="form-label">都道府県コード</label>
+        <select id="prefecturesCode" th:field="*{prefecturesCode}" class="form-select">
+            <option th:each="list : ${prefecturesDtoList}"
+                    th:value="${list.getPrefecturesCode()}"
+                    th:text="${list.getPrefecturesName()}">
+            </option>
+        </select>
+        <input type="submit" name="action" value="検索" class="btn btn-primary"/>
+    </fieldset>
+</form>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">日付</th>
+        <th scope="col">都道府県コード</th>
+        <th scope="col">都道府県名</th>
+        <th scope="col">各地の感染者数_1日ごとの発表数</th>
+        <th scope="col">各地の感染者数_累計</th>
+        <th scope="col">各地の死者数_1日ごとの発表数</th>
+        <th scope="col">各地の死者数_累計</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="list : ${covid19DtoList}">
+        <td th:text="${list.getYyyyMmDd()}"></td>
+        <td th:text="${list.getPrefecturesCode()}"></td>
+        <td th:text="${list.getPrefecturesName()}"></td>
+        <td th:text="${list.getInfectionPersonCountOneDay()}"></td>
+        <td th:text="${list.getInfectionPersonCountTotal()}"></td>
+        <td th:text="${list.getDeadCountOneDay()}"></td>
+        <td th:text="${list.getDeadCountTotal()}"></td>
+    </tr>
+    </tbody>
+</table>
 
 <script th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>
 <script th:src="@{/webjars/bootstrap/5.0.1/js/bootstrap.min.js}"></script>
