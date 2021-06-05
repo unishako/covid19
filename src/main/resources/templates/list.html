@@ -9,18 +9,22 @@
 <form method="post" th:action="@{/list}" th:object="${listForm}">
     <fieldset>
         <legend>検索条件</legend>
-        <label for="prefecturesCode" class="form-label">都道府県コード</label>
-        <select id="prefecturesCode" th:field="*{prefecturesCode}" class="form-select">
-            <option th:each="list : ${prefecturesDtoList}"
-                    th:value="${list.getPrefecturesCode()}"
-                    th:text="${list.getPrefecturesName()}">
-            </option>
-        </select>
+        <div class="input-group">
+            <span class="input-group-text">都道府県コード</span>
+            <label>
+                <select th:field="*{prefecturesCode}" class="form-control">
+                    <option th:each="list : ${prefecturesDtoList}"
+                            th:value="${list.getPrefecturesCode()}"
+                            th:text="${list.getPrefecturesName()}">
+                    </option>
+                </select>
+            </label>
+        </div>
         <input type="submit" name="action" value="検索" class="btn btn-primary"/>
     </fieldset>
 </form>
 
-<table class="table table-striped">
+<table class="table table-striped table-hover">
     <thead>
     <tr>
         <th scope="col">日付</th>
