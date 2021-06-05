@@ -38,7 +38,8 @@ class Covid19DaoTest {
     @Test
     @Transactional
     void findByPrefecturesCode_取得件数() {
-        int count = JdbcTestUtils.countRowsInTableWhere(jdbcTemplate, "covid19", "prefectures_code = '99'");
-        Assertions.assertEquals(2, count);
+        Assertions.assertEquals(
+                JdbcTestUtils.countRowsInTableWhere(jdbcTemplate, "covid19", "prefectures_code = '99'"),
+                covid19Dao.findByPrefecturesCode("99").size());
     }
 }

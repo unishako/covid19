@@ -16,12 +16,6 @@ class ListControllerTest {
     @Autowired
     MockMvc mockMvc;
 
-    /**
-     * 初期(GET /list)
-     * 一覧(POST /list)
-     * JSON(GET /list/json)
-     */
-
     @Test
     @Transactional
     void execute() {
