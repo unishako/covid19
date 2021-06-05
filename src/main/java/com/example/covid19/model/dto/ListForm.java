@@ -6,6 +6,11 @@ import java.time.LocalDate;
 
 @Data
 public class ListForm {
+
+    /**
+     * アクション
+     */
+    private String action;
     /**
      * 日付
      */

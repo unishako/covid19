@@ -23,7 +23,7 @@ public class Covid19Service {
      */
     public List<Covid19Dto> search(String prefecturesCode) {
 
-        List<Covid19> list = covid19Dao.selectByPrefecturesCode(prefecturesCode);
+        List<Covid19> list = covid19Dao.findByPrefecturesCode(prefecturesCode);
         List<Covid19Dto> dtoList = new ArrayList<>();
         list.forEach(e -> {
             Covid19Dto dto = new Covid19Dto() {

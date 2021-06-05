@@ -18,5 +18,5 @@ public interface Covid19Dao {
      * @return {@link List<Covid19>} covid19リスト
      */
     @Select
-    List<Covid19> selectByPrefecturesCode(String prefecturesCode);
+    List<Covid19> findByPrefecturesCode(String prefecturesCode);
 }
