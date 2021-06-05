@@ -38,4 +38,5 @@ out/
 
 .DS_Store
 docker/mysql/data
-*.csv
+docker/mysql/initdb/2.sql
+docker/mysql/initdb/nhk_news_covid19_prefectures_daily_data.csv
