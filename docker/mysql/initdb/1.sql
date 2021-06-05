@@ -9,5 +9,5 @@ CREATE TABLE covid19
     dead_count_total               INTEGER
 );
 
-LOAD
-DATA LOCAL INFILE '/docker-entrypoint-initdb.d/nhk_news_covid19_prefectures_daily_data.csv' INTO TABLE covid19 FIELDS TERMINATED BY ',' ENCLOSED BY '"' IGNORE 1 LINES;
+-- LOAD
+-- DATA LOCAL INFILE '/docker-entrypoint-initdb.d/nhk_news_covid19_prefectures_daily_data.csv' INTO TABLE covid19 FIELDS TERMINATED BY ',' ENCLOSED BY '"' IGNORE 1 LINES;
