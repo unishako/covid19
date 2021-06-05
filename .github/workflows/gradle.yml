@@ -24,9 +24,8 @@ jobs:
           MYSQL_PASSWORD: COVID19
           TZ: 'Asia/Tokyo'
         options:
-          -v /docker/mysql/data:/var/lib/mysql/:rw
-          -v /docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf/:r
-          -v /docker/mysql/initdb:/docker-entrypoint-initdb.d/:r
+          -v /docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+          -v /docker/mysql/initdb:/docker-entrypoint-initdb.d
         ports:
           - 3306:3306
 
