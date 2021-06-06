@@ -15,6 +15,11 @@ public class PrefecturesService {
 
     private final PrefecturesDao prefecturesDao;
 
+    /**
+     * 都道府県の一覧を取得
+     *
+     * @return {@link List<PrefecturesDto>} 都道府県リスト
+     */
     public List<PrefecturesDto> list() {
         List<Prefectures> list = prefecturesDao.findAll();
         List<PrefecturesDto> dtoList = new ArrayList<>();

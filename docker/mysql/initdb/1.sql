@@ -6,7 +6,8 @@ CREATE TABLE covid19
     infection_person_count_one_day INTEGER,
     infection_person_count_total   INTEGER,
     dead_count_one_day             INTEGER,
-    dead_count_total               INTEGER
+    dead_count_total               INTEGER,
+    PRIMARY KEY (yyyy_mm_dd, prefectures_code)
 );
 
 CREATE TABLE prefectures
