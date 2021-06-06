@@ -6,6 +6,8 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.transaction.annotation.Transactional;
 
 @SpringBootTest
@@ -18,7 +20,27 @@ class ListControllerTest {
 
     @Test
     @Transactional
-    void execute() {
+    void execute_初期表示() throws Exception {
 
+        mockMvc.perform(MockMvcRequestBuilders.post("/list"))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.view().name("list"))
+                .andExpect(MockMvcResultMatchers.model().attributeExists("prefecturesDtoList"))
+        ;
     }
+
+    @Test
+    @Transactional
+    void execute_検索() throws Exception {
+
+        mockMvc.perform(MockMvcRequestBuilders.post("/list")
+                .param("action", "検索")
+                .param("prefecturesCode", "99"))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.view().name("list"))
+                .andExpect(MockMvcResultMatchers.model().attributeExists("prefecturesDtoList"))
+                .andExpect(MockMvcResultMatchers.model().attributeExists("covid19DtoList"))
+        ;
+    }
+
 }
