@@ -57,10 +57,10 @@ class ListControllerTest {
                         setYyyyMmDd(LocalDate.MIN);
                         setPrefecturesCode(PREFECTURES_CODE);
                         setPrefecturesName(PREFECTURES_NAME);
-                        setInfectionPersonCountOneDay(1);
-                        setInfectionPersonCountTotal(2);
-                        setDeadCountOneDay(3);
-                        setDeadCountTotal(4);
+                        setInfectionPersonCountOneDay("1,111");
+                        setInfectionPersonCountTotal("2,222");
+                        setDeadCountOneDay("3,333");
+                        setDeadCountTotal("4,444");
                     }
                 }));
 
@@ -88,10 +88,10 @@ class ListControllerTest {
                         setYyyyMmDd(LocalDate.MIN);
                         setPrefecturesCode(PREFECTURES_CODE);
                         setPrefecturesName(PREFECTURES_NAME);
-                        setInfectionPersonCountOneDay(1);
-                        setInfectionPersonCountTotal(2);
-                        setDeadCountOneDay(3);
-                        setDeadCountTotal(4);
+                        setInfectionPersonCountOneDay("1,111");
+                        setInfectionPersonCountTotal("2,222");
+                        setDeadCountOneDay("3,333");
+                        setDeadCountTotal("4,444");
                     }
                 })));
     }

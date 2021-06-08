@@ -21,17 +21,17 @@ public class Covid19Dto {
     /**
      * 各地の感染者数_1日ごとの発表数
      */
-    private Integer infectionPersonCountOneDay;
+    private String infectionPersonCountOneDay;
     /**
      * 各地の感染者数_累計
      */
-    private Integer infectionPersonCountTotal;
+    private String infectionPersonCountTotal;
     /**
      * 各地の死者数_1日ごとの発表数
      */
-    private Integer deadCountOneDay;
+    private String deadCountOneDay;
     /**
      * 各地の死者数_累計
      */
-    private Integer deadCountTotal;
+    private String deadCountTotal;
 }

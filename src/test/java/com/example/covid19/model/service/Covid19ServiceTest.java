@@ -37,8 +37,16 @@ class Covid19ServiceTest {
                         setYyyyMmDd(LocalDate.now());
                         setPrefecturesCode(PREFECTURES_CODE);
                         setPrefecturesName(PREFECTURES_NAME);
+                        setInfectionPersonCountOneDay(1111);
+                        setInfectionPersonCountTotal(2222);
+                        setDeadCountOneDay(3333);
+                        setDeadCountTotal(4444);
                     }
                 }));
         Assertions.assertEquals(PREFECTURES_NAME, covid19Service.search(PREFECTURES_CODE).stream().findFirst().map(Covid19Dto::getPrefecturesName).orElseThrow());
+        Assertions.assertEquals("1,111", covid19Service.search(PREFECTURES_CODE).stream().findFirst().map(Covid19Dto::getInfectionPersonCountOneDay).orElseThrow());
+        Assertions.assertEquals("2,222", covid19Service.search(PREFECTURES_CODE).stream().findFirst().map(Covid19Dto::getInfectionPersonCountTotal).orElseThrow());
+        Assertions.assertEquals("3,333", covid19Service.search(PREFECTURES_CODE).stream().findFirst().map(Covid19Dto::getDeadCountOneDay).orElseThrow());
+        Assertions.assertEquals("4,444", covid19Service.search(PREFECTURES_CODE).stream().findFirst().map(Covid19Dto::getDeadCountTotal).orElseThrow());
     }
 }

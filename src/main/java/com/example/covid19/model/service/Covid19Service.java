@@ -3,6 +3,7 @@ package com.example.covid19.model.service;
 import com.example.covid19.model.dao.Covid19Dao;
 import com.example.covid19.model.dto.Covid19;
 import com.example.covid19.model.dto.Covid19Dto;
+import com.example.covid19.util.FormatUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -31,10 +32,10 @@ public class Covid19Service {
                     setYyyyMmDd(e.getYyyyMmDd());
                     setPrefecturesCode(e.getPrefecturesCode());
                     setPrefecturesName(e.getPrefecturesName());
-                    setInfectionPersonCountOneDay(e.getInfectionPersonCountOneDay());
-                    setInfectionPersonCountTotal(e.getInfectionPersonCountTotal());
-                    setDeadCountOneDay(e.getDeadCountOneDay());
-                    setDeadCountTotal(e.getDeadCountTotal());
+                    setInfectionPersonCountOneDay(FormatUtil.toComma(e.getInfectionPersonCountOneDay()));
+                    setInfectionPersonCountTotal(FormatUtil.toComma(e.getInfectionPersonCountTotal()));
+                    setDeadCountOneDay(FormatUtil.toComma(e.getDeadCountOneDay()));
+                    setDeadCountTotal(FormatUtil.toComma(e.getDeadCountTotal()));
                 }
             };
             dtoList.add(dto);
