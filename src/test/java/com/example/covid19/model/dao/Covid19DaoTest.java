@@ -17,10 +17,10 @@ import java.util.List;
 class Covid19DaoTest {
 
     @Autowired
-    Covid19Dao covid19Dao;
+    private Covid19Dao covid19Dao;
 
     @Autowired
-    JdbcTemplate jdbcTemplate;
+    private JdbcTemplate jdbcTemplate;
 
     /**
      * 取得内容テスト

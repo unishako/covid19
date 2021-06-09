@@ -17,10 +17,10 @@ import java.util.List;
 class Covid19ServiceTest {
 
     @Autowired
-    Covid19Service covid19Service;
+    private Covid19Service covid19Service;
 
     @MockBean
-    Covid19Dao covid19Dao;
+    private Covid19Dao covid19Dao;
 
     /**
      * 取得内容テスト

@@ -15,10 +15,10 @@ import java.util.List;
 class PrefecturesDaoTest {
 
     @Autowired
-    PrefecturesDao prefecturesDao;
+    private PrefecturesDao prefecturesDao;
 
     @Autowired
-    JdbcTemplate jdbcTemplate;
+    private JdbcTemplate jdbcTemplate;
 
     /**
      * 取得内容テスト

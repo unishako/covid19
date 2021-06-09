@@ -16,10 +16,10 @@ import java.util.List;
 class PrefecturesServiceTest {
 
     @Autowired
-    PrefecturesService prefecturesService;
+    private PrefecturesService prefecturesService;
 
     @MockBean
-    PrefecturesDao prefecturesDao;
+    private PrefecturesDao prefecturesDao;
 
     @Test
     void list_取得内容() {
