@@ -13,7 +13,9 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class Covid19Service {
-
+    /**
+     * Covid19Dao
+     */
     private final Covid19Dao covid19Dao;
 
     /**

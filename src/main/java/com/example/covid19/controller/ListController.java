@@ -17,10 +17,22 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ListController {
 
+    /**
+     * 都道府県サービス
+     */
     private final PrefecturesService prefecturesService;
-
+    /**
+     * Covid19サービス
+     */
     private final Covid19Service covid19Service;
 
+    /**
+     * 画面表示
+     *
+     * @param model    {@link Model} モデル
+     * @param listForm {@link ListForm} フォーム
+     * @return {@link String} 遷移先画面
+     */
     @RequestMapping
     public String execute(Model model, ListForm listForm) {
 

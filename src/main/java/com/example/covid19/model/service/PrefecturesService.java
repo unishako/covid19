@@ -12,7 +12,9 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class PrefecturesService {
-
+    /**
+     * 都道府県Dao
+     */
     private final PrefecturesDao prefecturesDao;
 
     /**

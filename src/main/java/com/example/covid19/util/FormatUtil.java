@@ -2,11 +2,7 @@ package com.example.covid19.util;
 
 import java.text.NumberFormat;
 
-/**
- * フォーマットユーティリティ
- */
 public class FormatUtil {
-
     /**
      * カンマ編集
      *
