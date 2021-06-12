@@ -8,7 +8,10 @@ import com.example.covid19.model.service.PrefecturesService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -46,5 +49,11 @@ public class ListController {
             model.addAttribute("covid19DtoList", covid19DtoList);
         }
         return "list";
+    }
+
+    @GetMapping("/{prefecturesCode}")
+    @ResponseBody
+    public List<Covid19Dto> json(@PathVariable("prefecturesCode") String prefecturesCode) {
+        return covid19Service.search(prefecturesCode);
     }
 }
