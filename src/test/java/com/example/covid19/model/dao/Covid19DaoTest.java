@@ -29,7 +29,8 @@ class Covid19DaoTest {
     @Transactional
     void findByPrefecturesCode_取得内容() {
         List<Covid19> list = covid19Dao.findByPrefecturesCode("99");
-        Assertions.assertEquals("国国国国国国国国国１", list.stream().findFirst().map(Covid19::getPrefecturesName).orElseThrow());
+        Assertions.assertEquals("国国国国国国国国国１",
+                list.stream().findFirst().map(Covid19::getPrefecturesName).orElseThrow());
     }
 
     /**
@@ -39,7 +40,9 @@ class Covid19DaoTest {
     @Transactional
     void findByPrefecturesCode_取得件数() {
         Assertions.assertEquals(
-                JdbcTestUtils.countRowsInTableWhere(jdbcTemplate, "covid19", "prefectures_code = '99'"),
+                JdbcTestUtils.countRowsInTableWhere(jdbcTemplate,
+                        "covid19",
+                        "prefectures_code = '99'"),
                 covid19Dao.findByPrefecturesCode("99").size());
     }
 }
