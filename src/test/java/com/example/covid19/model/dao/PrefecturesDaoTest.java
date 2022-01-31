@@ -1,6 +1,8 @@
 package com.example.covid19.model.dao;
 
 import com.example.covid19.model.dto.Prefectures;
+import com.github.database.rider.core.api.dataset.DataSet;
+import com.github.database.rider.spring.api.DBRider;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @SpringBootTest
+@DBRider
 class PrefecturesDaoTest {
 
     @Autowired
@@ -39,4 +42,13 @@ class PrefecturesDaoTest {
                 JdbcTestUtils.countRowsInTable(jdbcTemplate, "prefectures"),
                 prefecturesDao.findAll().size());
     }
+
+    @Test
+    @DataSet("/databaseRider/prefectures.csv")
+    @Transactional
+    void findAll_DatabaseRider() {
+        List<Prefectures> list = prefecturesDao.findAll();
+        Assertions.assertEquals("都道府県", list.stream().filter(f -> f.getPrefecturesCode().equals("98")).findFirst().map(Prefectures::getPrefecturesName).orElseThrow());
+    }
+
 }
