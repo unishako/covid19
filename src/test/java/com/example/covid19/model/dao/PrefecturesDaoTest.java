@@ -37,6 +37,7 @@ class PrefecturesDaoTest {
      * 取得件数テスト
      */
     @Test
+    @Transactional
     void findAll_取得件数() {
         Assertions.assertEquals(
                 JdbcTestUtils.countRowsInTable(jdbcTemplate, "prefectures"),
