@@ -2,16 +2,17 @@ version: "3.5"
 services:
   covid19-db:
     image: mysql:latest
+    platform: linux/x86_64
     container_name: covid19-db
     environment:
       MYSQL_ROOT_PASSWORD: ROOT
       MYSQL_DATABASE: covid19
       MYSQL_USER: covid19
       MYSQL_PASSWORD: COVID19
-      TZ: 'Asia/Tokyo'
+      TZ: "Asia/Tokyo"
     volumes:
       - ./docker/mysql/data:/var/lib/mysql
       - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
       - ./docker/mysql/initdb:/docker-entrypoint-initdb.d
     ports:
-      - 3306:3306
+      - "3306:3306"
