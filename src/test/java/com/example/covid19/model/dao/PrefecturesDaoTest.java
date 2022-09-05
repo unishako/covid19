@@ -44,12 +44,12 @@ class PrefecturesDaoTest {
                 prefecturesDao.findAll().size());
     }
 
-    @Test
-    @DataSet("databaseRider/prefectures.csv")
-    @Transactional
-    void findAll_DatabaseRider() {
-        List<Prefectures> list = prefecturesDao.findAll();
-        Assertions.assertEquals("都道府県", list.stream().filter(f -> f.getPrefecturesCode().equals("98")).findFirst().map(Prefectures::getPrefecturesName).orElseThrow());
-    }
+//    @Test
+//    @DataSet("databaseRider/prefectures.csv")
+//    @Transactional
+//    void findAll_DatabaseRider() {
+//        List<Prefectures> list = prefecturesDao.findAll();
+//        Assertions.assertEquals("都道府県", list.stream().filter(f -> f.getPrefecturesCode().equals("98")).findFirst().map(Prefectures::getPrefecturesName).orElseThrow());
+//    }
 
 }
