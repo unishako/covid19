@@ -45,7 +45,7 @@ class PrefecturesDaoTest {
     }
 
     @Test
-    @DataSet("databaseRider/prefectures.csv")
+    @DataSet("file://databaseRider/prefectures.csv")
     @Transactional
     void findAll_DatabaseRider() {
         List<Prefectures> list = prefecturesDao.findAll();
