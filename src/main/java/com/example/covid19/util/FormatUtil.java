@@ -6,11 +6,10 @@ public class FormatUtil {
     /**
      * カンマ編集
      *
-     * @param number {@link N} 数値
-     * @param <N>    数値型
+     * @param number {@link Number} 数値
      * @return カンマ編集済数値
      */
-    public static <N extends Number> String toComma(N number) {
+    public static String toComma(Number number) {
         NumberFormat nf = NumberFormat.getNumberInstance();
         return nf.format(number);
     }
